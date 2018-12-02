@@ -1,7 +1,7 @@
 import json
 
 
-def frequent_words():
+def frequent_words_json():
 
     with open("newsafr.json", encoding="utf-8") as datafile:
         json_data = json.load(datafile)
@@ -25,9 +25,9 @@ def frequent_words():
 
         word_len_sorted = sorted(word_len)
 
-        print('10 наиболее часто встречающихся слов:')
+        print('10 наиболее часто встречающихся слов с количеством повторений:')
         for entity in reversed(word_len_sorted[-10::]):
-            print('{} - {} р.'.format(entity[1], entity[0]))
+            print('{} - {}'.format(entity[1], entity[0]))
 
 if __name__ == "__main__":
-    frequent_words()
+    frequent_words_json()
